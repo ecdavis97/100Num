@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>APP NAME: Coding Challenge by Ethan Davis</title>
+    <title>Hundo: Coding Challenge by Ethan Davis</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,7 +28,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html"><img src="/img/White logo - no backgroundSQ.png" height="40" width="40" class="d-inline-block"> App Name</a> <!--can add alignment for text depending on logo-->
+            <a class="navbar-brand" href="/index.html"><img src="/img/White logo - no backgroundSQ.png" height="40" width="40" class="d-inline-block">Hundo</a> <!--can add alignment for text depending on logo-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -59,13 +59,17 @@
         </div>
  </nav>
 
-<main class="content">
-    <div class="container mt-5">
-        <h1>The app UI goes here</h1>
-        <input type="text" id="message" placeholder="Enter a Message"/>
-        <button id="btnSubmit" class="btn btn-primary">Display Message</button>
-    </div>
-</main>
+    <main class="content">
+        <div class="container mt-5">
+            <h1>Enter a Number</h1>
+            <input type="number" id="startValue" placeholder="Enter a Number" value=1/>
+            <input type="number" id="endValue" placeholder="Enter a Number" value=10/>
+            <button id="btnSubmit" class="btn btn-primary">Display Number</button>
+            <div id="results">
+
+            </div>
+        </div>
+    </main>
 
      <!--FOOTER SECTION-->
      <footer class="footer">
@@ -101,6 +105,6 @@
     <script src="js/site.js"></script>
 
     <script>
-        document.getElementById("btnSubmit").addEventListener("click",getValue2)
+        document.getElementById("btnSubmit").addEventListener("click",getNumbers)
     </script>
 </body>
