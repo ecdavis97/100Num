@@ -42,7 +42,7 @@
             width="40"
             class="d-inline-block"
           />
-          App Name</a
+          Hundo</a
         >
         <!--can add alignment for text depending on logo-->
         <button
@@ -73,10 +73,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">The Repo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="https://github.com/ecdavis97/100Num">My Github</a>
             </li>
           </ul>
         </div>
@@ -89,70 +86,98 @@
           <div class="col-12 col-lg-8">
             <pre class="line-numbers">
                     <code class="language-javascript">
-                        function getValue(){
-                            alert("Hello World!")
+                      
+                      function getNumbers() {
+                        let startValue = document.getElementById("startValue").value;
+                        let endValue = document.getElementById("endValue").value;
+                      
+                        //parse our numbers//
+                        startValue = parseInt(startValue);
+                        endValue = parseInt(endValue);
+                        
+                      
+                        if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+                      
+                          let numbers = generateNumbers(startValue,endValue);
+                          
+                          displayValues(numbers);
+                          
+                        } else {
+                          Swal.fire({
+                            backdrop: false,
+                            title: "Oops!",
+                            text: "You can only enter numbers",
+                          });
                         }
-                        
-                        function getValue2(){
-                            let msg='';
-                        
-                            msg=document.getElementById("message").value;
-                        
-                            Swal.fire(
-                                {
-                                    backdrop: false,
-                                    title: 'App Name',
-                                    text: msg
-                                }
-                            );
+                      }
+                      
+                      function generateNumbers(start,stop){
+                        let numbers = [];
+                      
+                        for (let i = start; i <= stop; i++) {
+                          numbers.push(i);    
                         }
+                      
+                        return numbers;
+                      }
+                      
+                      function displayValues(numArray){
+                          let results = document.getElementById("results")
+                          results.innerHTML = "";
+
+                        for (let index = 0; index < numArray.length; index++) {
+                          let div = document.createElement("div");
+                         let currentNumber = numArray[index];
+                      
+                          div.innerHTML = numArray[index];
+                          div.classList.add("col");
+                      
+                          if(currentNumber % 2 == 0){
+                            div.classList.add("odd");
+                          }else{
+                            div.classList.add("even");
+                          }
+                          results.appendChild(div);
+                        }
+                      
+                      }
                     </code>
                 </pre>
           </div>
           <div class="col-12 col-lg-4">
-            <p class="fw-bold">The code is structure in two functions</p>
-            <h5>getValue</h5>
-            <p>Prints an alert to the page</p>
-            <h5>getValue2</h5>
-            <p>Displays a user-entered message in a sweet alerts menu</p>
+            <p class="fw-bold">The code is structured in several functions</p>
+            <h5>getNumbers()</h5>
+            <p>Gets values input by the user.</p>
+            <h5>generateNumbers()</h5>
+            <p>If the number is between the numbers entered, raise it by 1</p>
+            <h5>displayValues()</h5>
+            <p>Displays even or odd numbers that occur between the numbers entered.</p>
           </div>
         </div>
       </div>
     </main>
 
-    <!--FOOTER SECTION-->
-    <footer class="footer">
+     <!--FOOTER SECTION-->
+     <footer class="footer">
       <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-lg-3 gy-2">
-          <div
-            class="col order-last order-md-first d-flex justify-content-center justify-content-lg-start"
-          >
-            <span class="muted"
-              >&copy; 2022 Ethan Davis | ethancdavis97@gmail.com</span
-            >
-          </div>
-          <div class="col text-center">
-            <div>
-              <img src="/img/ethanDavis_colorLogo_Edited.svg" height="75" />
-              <!--make a version of logo without the second line-->
-            </div>
-          </div>
-          <div class="col d-flex justify-content-center justify-content-lg-end">
-            <div class="row">
-              <div class="col social">
-                <a href="#"><i class="bi bi-linkedin"></i></a>
+          <div class="row row-cols-1 row-cols-lg-3 gy-2">
+              <div class="col order-last order-md-first d-flex justify-content-center justify-content-lg-start">
+                  <span class="muted">&copy; 2022 Ethan Davis | ethancdavis97@gmail.com</span>
               </div>
-              <div class="col social">
-                <a href="#"><i class="bi bi-twitter"></i></a>
+              <div class="col text-center">
+                  <div>
+                      <img src="/img/ethanDavis_colorLogo_Edited.svg" height="75"> <!--make a version of logo without the second line-->
+                  </div>
               </div>
-              <div class="col social">
-                <a href="#"><i class="bi bi-github"></i></a>
+              <div class="col d-flex justify-content-center justify-content-lg-end">
+                  <div class="row">
+                      <div class="col social"><a href="https://www.linkedin.com/in/ethan-davis-2a49bb103/"><i class="bi bi-linkedin"></i></a></div>
+                      <div class="col social"><a href="https://github.com/ecdavis97"><i class="bi bi-github"></i></a></div>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
       </div>
-    </footer>
+  </footer>
 
     <!-- Bootstrap JS -->
     <script

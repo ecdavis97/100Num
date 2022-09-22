@@ -67,11 +67,6 @@ function displayValues(numArray){
       div.classList.add("even");
     }
 
-    // if current number is odd
-    // div.classList.add("odd");
-
-    // "else" if number is even
-    // div.classList.add("even")
 
 
     ///append to the page
